@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "e86dc46c-500f-4722-8332-6947983bdb28",
+		"name": "codeChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "processCsv",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/aizaguirre/Desktop/Code Challenge/Book1.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/csv/anaProvider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"csv",
+						"anaProvider"
+					]
+				},
+				"description": "POST Request for upload and process a csv file."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

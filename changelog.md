@@ -1,4 +1,6 @@
 # Changelog
+## [0.0.5] - 01/15/2020
+* Write in output file after process csv data
 ## [0.0.4] - 01/15/2020
 * Process csv data
 ## [0.0.3] - 01/15/2020

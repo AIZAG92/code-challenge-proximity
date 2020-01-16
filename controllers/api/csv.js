@@ -1,6 +1,7 @@
 const { isEqual } = require('lodash');
 const { readFile } = require('../../utils/readFile');
 const { processData } = require('../../utils/processData');
+const { writeFile } = require('../../utils/writeFile');
 
 module.exports = {
     async parseCsv(req, res) {
@@ -22,7 +23,6 @@ module.exports = {
 
         try {
             csvData = await readFile(path);
-            console.log('csvData', csvData)
         }
         catch (error) {
             console.log('Error reading the file', error);
@@ -42,7 +42,12 @@ module.exports = {
             newData = processData({ csvData, headers, columnNameAllow });
         }
 
+        writeFile(newData);
         console.log('Final Data', newData);
+
+        res.status(200).json({
+            messsage: 'File uploaded and successfully processed'
+        });
 
     }
 }

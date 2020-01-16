@@ -16,3 +16,7 @@ AutoFi - Coding Challenge
 ```
 npm start
 ```
+
+
+# Note: you can use this csv as a reference Book1.csv  and for execute the endpoint you can import in postman the collection: codeChallenge.postman_collection.json
+

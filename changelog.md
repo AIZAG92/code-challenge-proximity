@@ -1,4 +1,6 @@
 # Changelog
+## [0.0.6] - 01/15/2020
+* Add inpunt validation to controller
 ## [0.0.5] - 01/15/2020
 * Write in output file after process csv data
 ## [0.0.4] - 01/15/2020

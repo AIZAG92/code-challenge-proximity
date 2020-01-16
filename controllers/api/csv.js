@@ -2,12 +2,23 @@ const { isEqual } = require('lodash');
 const { readFile } = require('../../utils/readFile');
 const { processData } = require('../../utils/processData');
 const { writeFile } = require('../../utils/writeFile');
+const validation = require('../../utils/validation');
 
 module.exports = {
     async parseCsv(req, res) {
         const { params: { providerName = null }, file = {} } = req;
         const { path = null } = file;
         console.log('provider name :', providerName);
+
+        const { isValid, errors } = validation({
+            providerName,
+            file
+        });
+
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
+
         let csvData = [];
         const columnNameAllow = [
             'UUID',
